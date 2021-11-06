@@ -39,6 +39,10 @@ function handleSubmitClick() {
 
 function handleDeleteClick() {
     console.log('in delete');
+
+    $('#employee-table-body')
+    .remove();
+    
 }
 
 function renderEmployees(employees) {
