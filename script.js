@@ -14,7 +14,7 @@ function onReady() {
     //append calc functions data to DOM
     // add red background to totalMonthlyCost if > $20k
     $('#submit-button').on('click', handleSubmitClick);
-    $('.delete-button').on('click', handleDeleteClick);
+    $('body').on('click', '.delete-button', handleDeleteClick);
 } // end onReady
 
 function handleSubmitClick() {
@@ -39,10 +39,6 @@ function handleSubmitClick() {
 
 function handleDeleteClick() {
     console.log('in delete');
-    
-    $('#employee-table-body')
-    .last()
-    .remove()
 }
 
 function renderEmployees(employees) {

@@ -23,3 +23,6 @@ table, th, td, tfoot {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.delete-button {
+    color:red;
+}
