@@ -6,7 +6,7 @@ let employees = [];
 function onReady() {
     // collect data from input fields via submit button
     renderEmployees(employees);
-    renderTotalMonthlyExpenses(employees);
+    // renderTotalMonthlyExpenses(employees);
     // empty input fields
     // store input data in variables
     // create array of employee objects
@@ -27,6 +27,7 @@ function renderEmployees(employees) {
             <td>${employee.idNumber}</td>
             <td>${employee.jobTitle}</td>
             <td>${employee.annualSalary}</td>
+            <td><button class="delete-button">Delete</button></td>
         <tr>
         `;
 
