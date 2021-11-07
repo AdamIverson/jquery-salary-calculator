@@ -39,10 +39,11 @@ function handleSubmitClick() {
 
 function handleDeleteClick() {
     console.log('in delete');
-
-    $('#employee-table-body')
-    .remove();
     
+    $(document).on('click', 'button.delete-button', function () {
+        $(this).closest('tr').remove();
+        //return false;
+});   
 }
 
 function renderEmployees(employees) {
@@ -50,8 +51,8 @@ function renderEmployees(employees) {
 
     for (let employee of employees) {
         let newTableRow = `
-        <tr>
-            <td>${employee.firstName}</td>
+        <tr class="one-table-row">
+            <td class="employee-data">${employee.firstName}</td>
             <td>${employee.lastName}</td>
             <td>${employee.idNumber}</td>
             <td>${employee.jobTitle}</td>
@@ -74,5 +75,10 @@ function renderTotalMonthlyExpenses(employees) {
 
         monthlyTotal += monthlyCost;
     }
+    
     $('#monthly-total').append('Total Monthly $', monthlyTotal.toFixed());
+
+    if (monthlyTotal>20000) {
+        $('#monthly-total').addClass(".red");
+    }
 }
