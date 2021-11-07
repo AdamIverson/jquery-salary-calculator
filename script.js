@@ -79,6 +79,6 @@ function renderTotalMonthlyExpenses(employees) {
     $('#monthly-total').append('Total Monthly $', monthlyTotal.toFixed());
 
     if (monthlyTotal>20000) {
-        $('#monthly-total').addClass(".red");
+        $('#monthly-total').addClass("red");
     }
 }
