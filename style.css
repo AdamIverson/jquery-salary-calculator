@@ -5,22 +5,33 @@ p {
 table, th, td, tfoot {
     border: 1px solid black;
     border-collapse: collapse;
-    empty-cells: hide;
+    empty-cells: show;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#table-footer {
-    background-color: grey;
-}
-
-.container {
-    display: flex;
-    justify-content: space-evenly;
-}
 #salaryCalculator {
     background-color: grey;
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#table-footer {
+    background-color: grey;
+    height: 1rem;
+}
+
+#monthly-total {
+    text-align: left;
+}
+
+#submit-button {
+    border-radius: 2px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
 }
 
 .delete-button {
@@ -29,4 +40,14 @@ table, th, td, tfoot {
 
 .red {
     background-color: red;
+}
+
+.data {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.annual-salary {
+    text-align:right;
+    font-family: Arial, Helvetica, sans-serif;
 }

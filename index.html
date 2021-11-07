@@ -23,13 +23,21 @@
 
     <p>Employees</p>
     <table>
+        <colgroup>
+            <col width="16%" />
+            <col width="16%" />
+            <col width="16%" />
+            <col width="16%" />
+            <col width="16%" />
+            <col width="100%" />
+            </colgroup>
         <thead>
             <th>First Name</th>
             <th>Last Name</th>
             <th>ID</th>
             <th>Job Title</th>
             <th>Annual Salary</th>
-            <th></th>
+            <th colspan="2"></th>
         </thead>
 
         <tbody id="employee-table-body">
@@ -44,13 +52,9 @@
         </tbody>
 
         <tfoot id="table-footer">
-            <tr></tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr rowspan="2">
+                <td rowspan="2" colspan="6"></td>
+            </tr>
         </tfoot>
     </table>
 

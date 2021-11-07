@@ -18,13 +18,18 @@ function onReady() {
 } // end onReady
 
 function handleSubmitClick() {
+    let newFirstName = $('#first-name-input').val();
+    let newLastName = $('#last-name-input').val();
+    let newIdNumber = $('#id-input').val();
+    let newJobTitle = $('#job-title-input').val();
+    let newAnnualSalary = $('#annual-salary-input').val();
 
     let newEmployee = {
-        firstName: $('#first-name-input').val(),
-        lastName: $('#last-name-input').val(),
-        idNumber: $('#id-input').val(),
-        jobTitle: $('#job-title-input').val(),
-        annualSalary: $('#annual-salary-input').val()
+        firstName: newFirstName,
+        lastName: newLastName,
+        idNumber: newIdNumber,
+        jobTitle: newJobTitle,
+        annualSalary: newAnnualSalary
     };
 
     employees.push(newEmployee);
@@ -52,12 +57,12 @@ function renderEmployees(employees) {
     for (let employee of employees) {
         let newTableRow = `
         <tr class="one-table-row">
-            <td class="employee-data">${employee.firstName}</td>
-            <td>${employee.lastName}</td>
-            <td>${employee.idNumber}</td>
-            <td>${employee.jobTitle}</td>
-            <td>${employee.annualSalary}</td>
-            <td><button class="delete-button">Delete</button></td>
+            <td class="data">${employee.firstName}</td>
+            <td class="data">${employee.lastName}</td>
+            <td class="${employee.idNumber} data">${employee.idNumber}</td>
+            <td class="data">${employee.jobTitle}</td>
+            <td class="annual-salary">$${employee.annualSalary}</td>
+            <td class="data"><button class="delete-button">Delete</button></td>
         <tr>
         `;
 
@@ -76,7 +81,7 @@ function renderTotalMonthlyExpenses(employees) {
         monthlyTotal += monthlyCost;
     }
     
-    $('#monthly-total').append('Total Monthly $', monthlyTotal.toFixed());
+    $('#monthly-total').append('Total Monthly $', monthlyTotal.toLocaleString('en-US'));
 
     if (monthlyTotal>20000) {
         $('#monthly-total').addClass("red");
