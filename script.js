@@ -47,9 +47,8 @@ function handleDeleteClick() {
     
     $(document).on('click', 'button.delete-button', function () {
         $(this).closest('tr').remove();
-        //return false;
-});   
-}
+    });
+};
 
 function renderEmployees(employees) {
     $('#employee-table-body').empty();
@@ -81,7 +80,7 @@ function renderTotalMonthlyExpenses(employees) {
         monthlyTotal += monthlyCost;
     }
     
-    $('#monthly-total').append('Total Monthly $', monthlyTotal.toLocaleString('en-US'));
+    $('#monthly-total').append('Total Monthly $', monthlyTotal.toLocaleString('en-US', {minimumFractionDigits: 2}));
 
     if (monthlyTotal>20000) {
         $('#monthly-total').addClass("red");
