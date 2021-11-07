@@ -24,7 +24,7 @@ function handleSubmitClick() {
     let newJobTitle = $('#job-title-input').val();
     let newAnnualSalary = $('#annual-salary-input').val();
 
-    let newEmployee = {
+    let employee = {
         firstName: newFirstName,
         lastName: newLastName,
         idNumber: newIdNumber,
@@ -32,7 +32,7 @@ function handleSubmitClick() {
         annualSalary: newAnnualSalary
     };
 
-    employees.push(newEmployee);
+    employees.push(employee);
     $('#first-name-input').val('');
     $('#last-name-input').val('');
     $('#id-input').val('');
@@ -47,7 +47,7 @@ function handleDeleteClick() {
     
     $(document).on('click', 'button.delete-button', function () {
         $(this).closest('tr').remove();
-    });
+    })
 };
 
 function renderEmployees(employees) {
@@ -55,10 +55,10 @@ function renderEmployees(employees) {
 
     for (let employee of employees) {
         let newTableRow = `
-        <tr class="one-table-row">
+        <tr id="${employee.idNumber}" class="one-table-row">
             <td class="data">${employee.firstName}</td>
             <td class="data">${employee.lastName}</td>
-            <td class="${employee.idNumber} data">${employee.idNumber}</td>
+            <td class="data">${employee.idNumber}</td>
             <td class="data">${employee.jobTitle}</td>
             <td class="annual-salary">$${employee.annualSalary}</td>
             <td class="data"><button class="delete-button">Delete</button></td>
@@ -80,7 +80,7 @@ function renderTotalMonthlyExpenses(employees) {
         monthlyTotal += monthlyCost;
     }
     
-    $('#monthly-total').append('Total Monthly $', monthlyTotal.toLocaleString('en-US', {minimumFractionDigits: 2}));
+    $('#monthly-total').append('Total Monthly $', monthlyTotal.toLocaleString('en-US', {maximumFractionDigits: 2}));
 
     if (monthlyTotal>20000) {
         $('#monthly-total').addClass("red");
